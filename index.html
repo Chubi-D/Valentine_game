@@ -396,14 +396,33 @@ nextBtn.addEventListener("click", () => {
     noBtn.addEventListener("click", e => e.preventDefault());
 
     /* ---------- YES CLICK ---------- */
-    yesBtn.addEventListener("click", () => {
+   /*---- yesBtn.addEventListener("click", () => {
       zone.style.display = "none";
       hint.style.display = "none";     // HIDE THE HINT
       result.style.display = "block";
       resizeConfettiCanvas();
       fullScreenConfetti();
-    });
+    }); ----*/
+       yesBtn.addEventListener("click", () => {
+      // 1. Hide the entire Valentine question section (header and buttons)
+      const valentineSection = document.getElementById("valentine");
+      valentineSection.style.setProperty("display", "none", "important");
+      
+      // 2. Hide the hint text just in case
+      hint.style.display = "none";
+    
+      // 3. Show the result section and force it to be visible
+      result.style.display = "block";
+      
+      // 4. Trigger confetti
+      resizeConfettiCanvas();
+      fullScreenConfetti();
+      
+      // 5. Scroll to top to ensure they see the YAY!
+      window.scrollTo(0, 0);
+    }); 
   </script>
 </body>
 
 </html>
+
