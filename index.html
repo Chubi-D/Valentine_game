@@ -221,7 +221,7 @@
 
 <div id="valentine" style="display:none;">
 
-  <h1>June Bug!,  will you be my valentine?</h1>
+  <h1 id="valTitle">June Bug!,  will you be my valentine?</h1>
 
   <section class="button-zone" id="zone">
     <button id="yesBtn">Yes</button>
@@ -396,14 +396,15 @@ nextBtn.addEventListener("click", () => {
     noBtn.addEventListener("click", e => e.preventDefault());
 
     /* ---------- YES CLICK ---------- */
-   /*---- yesBtn.addEventListener("click", () => {
+   yesBtn.addEventListener("click", () => {
       zone.style.display = "none";
       hint.style.display = "none";     // HIDE THE HINT
+      document.getElementById("valTitle").style.display = "none";
       result.style.display = "block";
       resizeConfettiCanvas();
       fullScreenConfetti();
-    }); ----*/
-       yesBtn.addEventListener("click", () => {
+    }); 
+     /*----  yesBtn.addEventListener("click", () => {
       // 1. Hide the entire Valentine question section (header and buttons)
       const valentineSection = document.getElementById("valentine");
       valentineSection.style.setProperty("display", "none", "important");
@@ -420,9 +421,10 @@ nextBtn.addEventListener("click", () => {
       
       // 5. Scroll to top to ensure they see the YAY!
       window.scrollTo(0, 0);
-    }); 
+    }); --*/
   </script>
 </body>
 
 </html>
+
 
